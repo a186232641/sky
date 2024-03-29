@@ -26,6 +26,13 @@ public interface EmployeeMapper {
 
 
     /**
+     * 根据主键动态修改SQL
+     * @param employee
+     */
+    void update(Employee employee);
+
+
+    /**
      * 分页查询
      * @param employeePageQueryDTO
      * @return
