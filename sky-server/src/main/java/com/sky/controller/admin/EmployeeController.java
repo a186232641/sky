@@ -112,6 +112,15 @@ public class EmployeeController {
         return Result.success();
     }
 
+    @ApiOperation("查询员工信息")
+    @GetMapping("/{id}")
+    public Result<Employee> getById(@PathVariable Integer id){
+        Employee employee =   employeeService.getById(id);
+        return Result.success(employee);
+    }
+
+
+
 
 
 

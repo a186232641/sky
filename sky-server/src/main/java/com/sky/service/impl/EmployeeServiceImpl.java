@@ -27,7 +27,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-
 public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
@@ -112,5 +111,17 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .status(status)
                 .id(id).build();
         employeeMapper.update(employee);
+    }
+
+    /**
+     * 根据id查询员工
+     * @param id
+     * @return
+     */
+    @Override
+    public Employee getById(Integer id) {
+     Employee employee = employeeMapper.getById(id);
+     employee.setPassword("****");
+        return employee;
     }
 }
